@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cryo-zbo-dt"
+version = "1.0.0"
+description = "Zero-Boil-Off Cryogenic Two-Phase Flow, Microgravity Propellant Slosh, Line Chilldown & Active TVS Digital Twin & HIL Testbed"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11"
+authors = [
+  { name = "DIMASA (Digital Intelligence Maintenance for Aircraft Systems in Africa) & Physics Hybrid Integrity Lab" }
+]
+keywords = [
+  "cryogenics",
+  "zero-boil-off",
+  "two-phase-flow",
+  "nukiyama-boiling-curve",
+  "leidenfrost",
+  "propellant-slosh",
+  "thermodynamic-vent-system",
+  "model-predictive-control",
+  "ccsds-hil",
+  "aerospace-digital-twin"
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "pyyaml>=6.0",
+  "pyserial>=3.5"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v"

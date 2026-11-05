@@ -1,0 +1,42 @@
+# Declarative TRL 4 Campaign Configuration for CRYO-ZBO-DT
+project:
+  code: "CRYO-ZBO-DT"
+  title: "Zero-Boil-Off Cryogenic Two-Phase Flow, Microgravity Propellant Slosh, Line Chilldown & Active TVS Digital Twin"
+  organization: "DIMASA & Physics Hybrid Integrity Lab"
+  trl_level: 4
+
+chilldown_benchtop:
+  fluid: "LN2"
+  n_nodes: 8
+  line_length_m: 2.40
+  inner_diameter_m: 0.01905
+  wall_thickness_m: 0.00211
+  inlet_pressure_pa: 165000.0
+  back_pressure_pa: 105000.0
+  initial_wall_temp_k: 293.15
+  max_mass_flow_kg_s: 0.095
+  dt_s: 0.5
+  duration_s: 140.0
+
+orbital_depot_tank:
+  fluid: "LOX"
+  tank_radius_m: 1.65
+  tank_cyl_height_m: 4.20
+  initial_fill_fraction: 0.78
+  target_pressure_pa: 180000.0
+  pressure_band_limit_pa: 1500.0
+  passive_relief_band_pa: 4200.0
+  mli_layers: 45
+  microgravity_accel_m_s2: 0.00025
+  lad_pore_diameter_m: 14.8e-6
+  dt_s: 2.0
+  duration_s: 1200.0
+
+hil_bridge:
+  transport_mode: "LOOPBACK"
+  enable_thermocouple_dropout: true
+  dropout_start_s: 25.0
+  dropout_end_s: 38.0
+  enable_sensor_drift: true
+  enable_valve_stiction: true
+  corrupt_every_nth_frame: 45
